@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Cloth & Co.</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html" id="homeButton">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li>
+                    <form id="searchForm" onsubmit="handleSearch(event)">
+                        <input type="text" placeholder="Search..." id="searchInput" required>
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </li>
+                <li><a href="#login" id="loginButton" onclick="openModal()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="ProductIMG/tshirt1.jpg">
+        </div>
+        <div class="product-details">
+            <h2>Blank Canvas T-Shirt</h2>
+            <div class="price">$19.99</div>
+            <div class="description">
+                <p>This classic black t-shirt is a wardrobe essential. Made from soft and comfortable cotton, it's perfect for everyday wear. 
+                    The simple design makes it easy to pair with anything, from jeans to shorts. Whether you're running errands or relaxing at home, this t-shirt will keep you comfortable and stylish.</p>
+            </div>
+            
+            <div class="size">
+                <label for="size">Size:</label>
+                <select id="size" name="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
+            <div class="quantity">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </div>
+            <button onclick="addToCart('Blank Canvas T-Shirt', 19.99)">Add to Cart</button>
+        </div>
+    </div>
+
+    <section id="featured">
+        <div class="featured-container">
+            <!-- 5 Featured Products in a 1x2 Grid -->
+            <div class="featured-product">
+                <a href="featurepro1.html" target="_self">
+                    <img src="ProductIMG/featurepro1.jpg" alt="Featured Product 1">
+                </a>
+                <h3>Oversized Denim Shirt</h3>
+                <p>$79.99</p>
+                <button onclick="addToCart('Oversized Denim Shirt', 79.99)">Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <a href="featurepro2.html" target="_self">
+                    <img src="ProductIMG/featurepro2.jpg" alt="Featured Product 2">
+                </a>
+                <h3>Cozy Sherpa-Lined Parka</h3>
+                <p>$89.99</p>
+                <button onclick="addToCart('Cozy Sherpa-Lined Parka', 89.99)">Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <a href="featurepro3.html" target="_self">
+                    <img src="ProductIMG/featurepro3.jpg" alt="Featured Product 3">
+                </a>
+                <h3>Vintage-Inspired Leather Jacket</h3>
+                <p>$99.99</p>
+                <button onclick="addToCart('Vintage-Inspired Leather Jacket', 99.99)">Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <a href="featurepro4.html" target="_self">
+                    <img src="ProductIMG/featurepro4.jpg" alt="Featured Product 4">
+                </a>
+                <h3>Waterproof Hiking Jacket</h3>
+                <p>$109.99</p>
+                <button onclick="addToCart('Waterproof Hiking Jacket', 109.99)">Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <a href="featurepro5.html" target="_self">
+                    <img src="ProductIMG/featurepro5.jpg" alt="Featured Product 5">
+                </a>
+                <h3>Luxurious Black Leather Jacket</h3>
+                <p>$119.99</p>
+                <button onclick="addToCart('Featured Product 5', 119.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-title"><h2>Login</h2></div>
+            <div class="modal-body">
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p id="error-msg" style="color: red; display: none;">Invalid username or password</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: support@clothingstore.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#products">Products</a>
+                <a href="#login">Login</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Clothing Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById("loginModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("loginModal").style.display = "none";
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            // Add your login logic here
+        }
+
+        function handleSearch(event) {
+            event.preventDefault();
+            // Add your search logic here
+        }
+
+        function addToCart(productName, price) {
+            // Get the current cart from localStorage or initialize an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the product is already in the cart
+            const existingProductIndex = cart.findIndex(item => item.productName === productName);
+            if (existingProductIndex > -1) {
+                // If the product is already in the cart, increase the quantity
+                cart[existingProductIndex].quantity += 1;
+            } else {
+                // If the product is not in the cart, add it
+                cart.push({ productName, price, quantity: 1 });
+            }
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Optionally, redirect to the cart page
+            alert(productName + " has been added to your cart at $" + price.toFixed(2));
+        }
+
+        let currentFeaturedIndex = 0;
+        const featuredProducts = document.querySelectorAll('.featured-product');
+        const totalFeaturedProducts = featuredProducts.length;
+
+        function cycleFeaturedProducts() {
+            featuredProducts[currentFeaturedIndex].style.display = 'none'; // Hide current featured product
+            currentFeaturedIndex = (currentFeaturedIndex + 1) % totalFeaturedProducts; // Move to next featured product
+            featuredProducts[currentFeaturedIndex].style.display = 'block'; // Show next featured product
+        }
+
+        // Initialize featured products display
+        featuredProducts.forEach((product, index) => {
+            product.style.display = index === 0 ? 'block' : 'none'; // Show only the first featured product initially
+        });
+
+        setInterval(cycleFeaturedProducts, 3000);
+    </script>
+
+</body>
+</html>
