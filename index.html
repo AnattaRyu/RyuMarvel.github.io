@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Cloth & Co.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeButton">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li>
+                    <form id="searchForm" onsubmit="handleSearch(event)">
+                        <input type="text" placeholder="Search..." id="searchInput" required>
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </li>
+                <li><a href="shoppingcart/cart.html"><img src="Shop/ProductIMG/shopping-cart.jpg" alt=""></li>
+                <li><a href="#login" id="loginButton" onclick="openModal()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="slideshow-container">
+            <div class="mySlides fade">          
+                <img src="slidephotos/img1.jpg">          
+            </div>
+            <div class="mySlides fade">          
+                <img src="slidephotos/img2.jpg">          
+            </div>
+            <div class="mySlides fade">         
+                <img src="slidephotos/img3.jpg">          
+            </div>
+            <div class="pre" onclick="plusSlides(-1)"></div>
+            <div class="next" onclick="plusSlides(1)"></div>
+        </div>      
+        
+        <div style="text-align: center;">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+
+        <section id="products">
+            <div class="product-name"><h2>Our Products</h2></div>
+            <div class="product-container">
+                <!-- 12 Products in a 4x3 Grid -->
+                <div class="product">
+                    <a href="Shop/product1.html" target="_self">
+                        <img src="Shop/ProductIMG/tshirt1.jpg" alt="Product 1">
+                    </a>
+                    <h3>Blank Canvas T-Shirt</h3>
+                    <p>$19.99</p>
+                    <p>Stylish and comfortable, perfect for everyday wear.</p>
+                    <button onclick="addToCart('Blank Canvas T-Shirt', 19.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product2.html" target="_self">
+                        <img src="Shop/ProductIMG/sweater2.jpg" alt="Product 2">
+                    </a>
+                    <h3>Sweet Stripes Long-Sleeve</h3>
+                    <p>$29.99</p>
+                    <p>Perfect for layering, this piece adds style to any outfit.</p>
+                    <button onclick="addToCart('Sweet Stripes Long-Sleeve', 29.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product3.html" target="_self">
+                        <img src="Shop/ProductIMG/top3.jpg" alt="Product 3">
+                    </a>
+                    <h3>Classic Black Dress with a Modern Edge</h3>
+                    <p>$39.99</p>
+                    <p>Made from high-quality materials, this product is a must-have.</p>
+                    <button onclick="addToCart('Classic Black Dress with a Modern Edge', 39.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product4.html" target="_self">
+                        <img src="Shop/ProductIMG/shorts4.jpg" alt="Product 4">
+                    </a>
+                    <h3>Relaxed Fit Chino Shorts</h3>
+                    <p>$49.99</p>
+                    <p>Trendy and versatile, suitable for any occasion.</p>
+                    <button onclick="addToCart('Relaxed Fit Chino Shorts', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product5.html" target="_self">
+                        <img src="Shop/ProductIMG/jeans5.jpg" alt="Product 5">
+                    </a>
+                    <h3>Classic Blue Jeans for Men</h3>
+                    <p>$59.99</p>
+                    <p>Comfortable fit with a modern design.</p>
+                    <button onclick="addToCart('Classic Blue Jeans for Men', 59.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product6.html" target="_self">
+                        <img src="Shop/ProductIMG/sweater6.jpg" alt="Product 6">
+                    </a>
+                    <h3>Classic Crewneck Sweater</h3>
+                    <p>$59.99</p>
+                    <p>Durable and fashionable, ideal for outdoor activities.</p>
+                    <button onclick="addToCart('Classic Crewneck Sweater', 59.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product7.html" target="_self">
+                        <img src="Shop/ProductIMG/hoodie7.jpg" alt="Product 7">
+                    </a>
+                    <h3>Classic White Hoodie</h3>
+                    <p>$39.99</p>
+                    <p>Perfect for any season, stylish and comfortable.</p>
+                    <button onclick="addToCart('Classic White Hoodie', 39.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product8.html" target="_self">
+                        <img src="Shop/ProductIMG/outer8.jpg" alt="Product 8">
+                    </a>
+                    <h3>Stylish and Warm Winter Jacket</h3>
+                    <p>$49.99</p>
+                    <p>Trendy and chic, a must-have for your wardrobe.</p>
+                    <button onclick="addToCart('Stylish and Warm Winter Jacket', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product9.html" target="_self">
+                        <img src="Shop/ProductIMG/puffer9.jpg" alt="Product 9">
+                    </a>
+                    <h3>Lightweight Puffer Jacket</h3>
+                    <p>$49.99</p>
+                    <p>High-quality fabric, perfect for special occasions.</p>
+                    <button onclick="addToCart('Lightweight Puffer Jacket', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product10.html" target="_self">
+                        <img src="Shop/ProductIMG/long10.jpg" alt="Product 10">
+                    </a>
+                    <h3>Plaid Flannel Shirt</h3>
+                    <p>$49.99</p>
+                    <p>Comfortable and stylish, perfect for any outing.</p>
+                    <button onclick="addToCart('Plaid Flannel Shirt', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product11.html" target="_self">
+                        <img src="Shop/ProductIMG/polo11.jpg" alt="Product 11">
+                    </a>
+                    <h3>Summer Polo Shirt</h3>
+                    <p>49.99</p>
+                    <p>Fashionable and versatile, suitable for all occasions.</p>
+                    <button onclick="addToCart('Summer Polo Shirt', 49.99)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <a href="Shop/product12.html" target="_self">
+                        <img src="Shop/ProductIMG/skirt12.jpg" alt="Product 12">
+                    </a>
+                    <h3>Classic Pleated Skirt</h3>
+                    <p>$49.99</p>
+                    <p>Stylish and elegant, a perfect addition to your collection.</p>
+                    <button onclick="addToCart('Classic Pleated Skirt', 49.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured">
+            <div class="product-name"><h2>Featured Products</h2></div>
+            <div class="featured-container">
+                <!-- 5 Featured Products in a 1x2 Grid -->
+                <div class="featured-product">
+                    <a href="Shop/featurepro1.html" target="_self">
+                        <img src="Shop/ProductIMG/featurepro1.jpg" alt="Featured Product 1">
+                    </a>
+                    <h3>Oversized Denim Shirt</h3>
+                    <p>$79.99</p>
+                    <button onclick="addToCart('Oversized Denim Shirt', 79.99)">Add to Cart</button>
+                </div>
+                <div class="featured-product">
+                    <a href="Shop/featurepro2.html" target="_self">
+                        <img src="Shop/ProductIMG/featurepro2.jpg" alt="Featured Product 2">
+                    </a>
+                    <h3>Cozy Sherpa-Lined Parka</h3>
+                    <p>$89.99</p>
+                    <button onclick="addToCart('Cozy Sherpa-Lined Parka', 89.99)">Add to Cart</button>
+                </div>
+                <div class="featured-product">
+                    <a href="Shop/featurepro3.html" target="_self">
+                        <img src="Shop/ProductIMG/featurepro3.jpg" alt="Featured Product 3">
+                    </a>
+                    <h3>Vintage-Inspired Leather Jacket</h3>
+                    <p>$99.99</p>
+                    <button onclick="addToCart('Vintage-Inspired Leather Jacket', 99.99)">Add to Cart</button>
+                </div>
+                <div class="featured-product">
+                    <a href="Shop/featurepro4.html" target="_self">
+                        <img src="Shop/ProductIMG/featurepro4.jpg" alt="Featured Product 4">
+                    </a>
+                    <h3>Waterproof Hiking Jacket</h3>
+                    <p>$109.99</p>
+                    <button onclick="addToCart('Waterproof Hiking Jacket', 109.99)">Add to Cart</button>
+                </div>
+                <div class="featured-product">
+                    <a href="Shop/featurepro5.html" target="_self">
+                        <img src="Shop/ProductIMG/featurepro5.jpg" alt="Featured Product 5">
+                    </a>
+                    <h3>Luxurious Black Leather Jacket</h3>
+                    <p>$119.99</p>
+                    <button onclick="addToCart('Luxurious Black Leather Jacket', 119.99)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-title"><h2>Login</h2></div>
+            <div class="modal-body">
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <p id="error-msg" style="color: red; display: none;">Invalid username or password</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: support@clothingstore.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#products">Products</a>
+                <a href="#login">Login</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Clothing Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
